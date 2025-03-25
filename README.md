@@ -1,25 +1,22 @@
-# Apple 1 JS Emulator
+# Apple V1 JS Emulator
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8dda601a-c4c2-4cde-80c4-bc08ffd6d18e/deploy-status)](https://app.netlify.com/sites/stidme/deploys)
-[![CodeQL](https://github.com/stid/Apple1JS/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/stid/Apple1JS/actions/workflows/github-code-scanning/codeql)
-
-The Apple 1 JS Emulator is a project written in TypeScript/JavaScript that emulates the Apple 1 computer. It is based on the [Hybrid HW](https://github.com/stid/APPLE-1-ReplicaDue) and Torlus' [6502.js](https://github.com/Torlus/6502.js) project.
+The Apple V1 JS Emulator is a project written in TypeScript/JavaScript that emulates the Apple 1 computer using custom made vector graphics. This is a fork of a pre-existing emulator called [Apple 1 JS](https://github.com/stid/Apple1JS), and is based off of [Hybrid HW](https://github.com/stid/APPLE-1-ReplicaDue) and Torlus' [6502.js](https://github.com/Torlus/6502.js) project.
 
 ## Demo
 
-You can try out the emulator in your browser with the [Interactive Demo](https://stid.me).
+You can try out the emulator in your browser with the [Interactive Demo](https://apple-v1-js.vercel.app/).
 
 ## Local Setup
 
 To run the emulator locally on your computer, you'll need to install the required packages with the following command in the repo folder:
 
-``` ssh
+```ssh
 yarn install
 ```
 
 Then, start the emulator in developer mode with:
 
-``` ssh
+```ssh
 yarn start
 ```
 
