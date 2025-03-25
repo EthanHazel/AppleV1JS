@@ -7,18 +7,18 @@ export type ActionsProps = {
 };
 
 const Actions = ({ onReset, onBS, supportBS, showDebug, onShowDebug }: ActionsProps) => (
-    <div>
+    <div className="actions">
+        <p>---</p>
         <a onClick={onReset} href="#">
-            RESET
+            RESET [TAB]
         </a>{' '}
-        |{' '}
         <a onClick={onBS} href="#">
             SUPOPRT BACKSPACE [{supportBS ? 'ON' : 'OFF'}]
         </a>{' '}
-        |{' '}
         <a onClick={onShowDebug} href="#">
-            {showDebug ? 'HIDE DEBUG' : 'SHOW DEBUG'}
+            DEBUG [{showDebug ? 'ON' : 'OFF'}]
         </a>
+        <p>---</p>
     </div>
 );
 

@@ -1,32 +1,143 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import font from public folder called font.otf */
+@font-face {
+    font-family: 'font';
+    src: url('../public/font.otf') format('opentype');
+}
 
-/* Define custom styles for the base layer */
-@layer base {
-  /* Body styles */
-  body {
-    @apply bg-black;        /* Background color */
-    @apply text-gray-400;    /* Text color */
-    @apply text-sm;          /* Text size */
-    @apply font-mono;        /* Font family */
-  }
+body {
+    background-color: black;
+    color: white;
+}
 
-  /* Link styles */
-  a {
-    @apply text-green-600;             /* Text color */
-    @apply hover:text-green-300;       /* Hover text color */
-    @apply visited:text-green-600;     /* Visited text color */
-  }
+a {
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-  /* Heading 3 styles */
-  h3 {
-    @apply mt-4 mb-1;        /* Margins */
-    @apply font-bold;        /* Font weight */
-  }
+.char {
+    font-family: 'font';
+    font-size: 32px;
+    display: flex;
+    overflow: hidden;
+    width: 23px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
 
-  /* Paragraph styles */
-  p {
-    @apply text-slate-500;   /* Text color */
-  }
+.cursor {
+    position: absolute;
+    transform: translate(12px, 71px);
+}
+
+.crt {
+    display: flex;
+    background-color: black;
+    padding: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border: 2px solid #ffffff;
+}
+
+.actions {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    font-family: 'font';
+}
+
+.actions a {
+    background-color: black !important;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1rem;
+    width: 100px;
+    text-align: center;
+}
+
+.main-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    height: 32px;
+    width: calc(32px * 30px + 18px);
+}
+
+.info p {
+    font-family: 'font';
+    font-size: 0.75rem;
+}
+
+.info h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'font';
+}
+
+.info {
+    position: fixed;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.debug-domain {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    font-family: 'font';
+}
+
+.debug-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    font-family: 'font';
+    font-size: 0.75rem;
+}
+
+.debug {
+    position: fixed;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 300px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+.title {
+    font-family: 'font';
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+    z-index: 1;
+    margin-bottom: 2rem;
 }

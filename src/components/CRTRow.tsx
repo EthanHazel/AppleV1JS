@@ -10,10 +10,7 @@ const CRTRow = memo(({ line, rowIndex }: CRTRowProps) => {
     const chars = [...line];
 
     return (
-        <div
-            className="absolute"
-            style={{ top: `${rowIndex * CRTConstants.FONT_RECT[1] + CRTConstants.TOP_PADDING}px` }}
-        >
+        <div className="row" style={{ top: `${rowIndex * CRTConstants.FONT_RECT[1] + CRTConstants.TOP_PADDING}px` }}>
             {chars.map((char, index) => (
                 <CRTRowChar char={char} x={index} key={index} />
             ))}

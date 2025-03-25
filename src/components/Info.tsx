@@ -1,10 +1,3 @@
-const StartInstructions = () => (
-    <>
-        <h3>FIRST START / RESET</h3>
-        <p>Press TAB</p>
-    </>
-);
-
 const TestProgram = () => (
     <>
         <h3>TEST PROGRAM</h3>
@@ -55,24 +48,32 @@ const ManualLink = () => (
     </>
 );
 
-const GitHubLink = () => (
+const Credits = () => (
     <>
-        <h3>GITHUB</h3>
+        <h3>CREDITS</h3>
         <p>
-            <a href={'https://github.com/stid/Apple1JS'}>https://github.com/stid/Apple1JS</a>
+            <a href="https://github.com/Torlus/6502.js">6502.js</a> by Torlus
+        </p>
+        <p>
+            <a href="https://github.com/stid/APPLE-1-ReplicaDue">Hybrid HW</a> by stid
+        </p>
+        <p>
+            <a href="https://github.com/stid/Apple1JS">Original Version</a> by stid
+        </p>
+        <p>
+            <a href="https://github.com/EthanHazel/AppleV1JS">Vector Version</a> by Ethan Hazel
         </p>
     </>
 );
 
 const Info = () => (
-    <div>
-        <StartInstructions />
+    <div className="info">
         <TestProgram />
         <BasicProgram />
         <AnniversaryInfo />
         <MemoryAddresses />
         <ManualLink />
-        <GitHubLink />
+        <Credits />
     </div>
 );
 

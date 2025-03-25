@@ -2,13 +2,12 @@ import Debugger from './Debugger';
 import Info from './Info';
 import CRTWorker from './CRTWorker';
 import { CONFIG } from '../config';
-import { APP_VERSION } from '../version';
 import { WORKER_MESSAGES } from '../apple1/TSTypes';
 import Actions from './Actions';
 import React, { useRef, useEffect, useState, JSX } from 'react';
 import ErrorBoundary from './Error';
 
-const Title = () => <h3>Apple 1 :: JS Emulator - by =stid= v{APP_VERSION}</h3>;
+const Title = () => <span className="title">Apple 1 JS Vector Emulator</span>;
 
 const LayoutRow = ({ children }: { children?: React.ReactNode }) => <div className="flex-1 p-6">{children}</div>;
 
@@ -73,14 +72,14 @@ const App = ({ worker }: Props): JSX.Element => {
 
     return (
         <ErrorBoundary>
-            <div className="flex">
+            <div className="main-content">
+                <Title />
                 <LayoutRow>
-                    <Title />
                     <div onClick={focusHiddenInput}>
                         <CRTWorker worker={worker} />
                     </div>
 
-                    <div className="p-0 mt-1">
+                    <div className="actions">
                         <Actions
                             supportBS={supportBS}
                             onReset={(e) => {
@@ -103,10 +102,10 @@ const App = ({ worker }: Props): JSX.Element => {
                         />
                     </div>
                 </LayoutRow>
-                <LayoutRow>
-                    <Info />
-                </LayoutRow>
             </div>
+            <LayoutRow>
+                <Info />
+            </LayoutRow>
             {showDebug && (
                 <div className="flex">
                     <Debugger worker={worker} />

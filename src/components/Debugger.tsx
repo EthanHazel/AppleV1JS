@@ -28,7 +28,7 @@ const Debugger = ({ worker }: { worker: Worker }): JSX.Element => {
     }, [worker]);
 
     return (
-        <div className="flex flex-wrap space-x-4 text-sm pl-4">
+        <div className="debug">
             {Object.keys(debugInfo).map((key) => (
                 <DebugDomain key={key} domainKey={key} domainData={debugInfo[key]} />
             ))}
@@ -43,18 +43,18 @@ interface DebugDomainProps {
 
 // The DebugDomain component displays a domain of debug information.
 const DebugDomain = ({ domainKey, domainData }: DebugDomainProps) => (
-    <div className="bg-gray-100 rounded p-4 shadow-md">
+    <div className="debug-domain">
         <DomainTitle title={domainKey} />
         <DomainContent domainData={domainData} />
     </div>
 );
 
 // The DomainTitle component displays the title for a domain.
-const DomainTitle = ({ title }: { title: string }) => <div className="font-bold mb-2">{title}</div>;
+const DomainTitle = ({ title }: { title: string }) => <div className="debug-title">{title}</div>;
 
 // The DomainContent component displays the content for a domain.
 const DomainContent = ({ domainData }: { domainData: { [key: string]: string | number | boolean } }) => (
-    <div className="text-gray-700">
+    <div className="debug-content">
         {Object.keys(domainData).map((key) => (
             <DebugDomainItem key={key} label={key} value={domainData[key]} />
         ))}

@@ -12,20 +12,20 @@ const CRTCursor = memo(({ row, column }: CursorProp) => {
 
     useEffect(() => {
         const toggleVisibility = () => setVisible((prevVisible) => !prevVisible);
-        const visibleTimeout = visible ? 400 : 600;
+        const visibleTimeout = visible ? 300 : 200;
         const timerId = setTimeout(toggleVisibility, visibleTimeout);
 
         return () => clearTimeout(timerId);
     }, [visible]);
 
     const cursorStyle = {
-        left: `${column * (CRTConstants.FONT_RECT[0] - 4) + CRTConstants.LEFT_PADDING - 11}px`,
-        top: `${row * CRTConstants.FONT_RECT[1] + CRTConstants.TOP_PADDING}px`,
+        left: `${column * CRTConstants.FONT_RECT[0] + CRTConstants.LEFT_PADDING - 10}px`,
+        top: `${row * CRTConstants.FONT_RECT[1]}px`,
         display: visible ? 'block' : 'none',
     };
 
     return (
-        <div className="absolute" data-testid="cursor" style={cursorStyle}>
+        <div className="cursor" data-testid="cursor" style={cursorStyle}>
             <CRTRowChar x={0} char="@" />
         </div>
     );
